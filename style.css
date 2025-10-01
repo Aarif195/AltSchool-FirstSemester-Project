@@ -1,0 +1,124 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling: center content vertically and horizontally, set background and font */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 100vh;
+  background-color: #a02323;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Timer display styling */
+p {
+  font-size: 90px;
+  font-weight: 600;
+}
+
+/* Circle container for Start and Stop buttons */
+.start-stop {
+  width: 240px;
+  height: 200px;
+  border-radius: 45%;
+  background-color: #d2ec8a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for Start and Stop buttons inside the circle */
+.start-stop button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+/* Reset button styling */
+.resetBtn {
+  background-color: #4caf50;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+/* Hover effect for Reset button */
+.resetBtn:hover {
+  background-color: #45a049;
+}
+
+/* Start button color */
+.startBtn {
+  background-color: #2196f3;
+}
+
+/* Stop button color */
+.stopBtn {
+  background-color: #f44336;
+}
+
+/* Hover effect for Start and Stop buttons */
+.start-stop button:hover {
+  opacity: 0.8;
+}
+
+/* Toggling Styles States */
+/* Light theme */
+body.light-theme {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.start-stop.light-theme {
+  background-color: #d2ec8a;
+}
+
+.resetBtn.light-theme {
+  background-color: #4caf50;
+  color: white;
+}
+
+.startBtn.light-theme {
+  background-color: #2196f3;
+}
+
+.stopBtn.light-theme {
+  background-color: #f44336;
+}
+
+/* Theme toggle button styling */
+.themeToggleBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff9800; /* Orange color */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.themeToggleBtn:hover {
+  background-color: #e68a00; /* Slightly darker on hover */
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 60px;
+  }
+}
