@@ -2,9 +2,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Body styling: center content vertically and horizontally, set background and font */
+/* Body styling: center content with gradient background */
 body {
   display: flex;
   flex-direction: column;
@@ -12,113 +13,112 @@ body {
   align-items: center;
   gap: 50px;
   height: 100vh;
-  background-color: #a02323;
-  font-family: Arial, sans-serif;
-  color: white;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* Timer display styling */
+/* Timer display: glowing digital clock effect */
 p {
   font-size: 90px;
-  font-weight: 600;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00bfae;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Circle container for Start and Stop buttons */
+/* Circle container for Start and Stop buttons (glassmorphism) */
 .start-stop {
   width: 240px;
-  height: 200px;
-  border-radius: 45%;
-  background-color: #d2ec8a;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  gap: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
-/* Styling for Start and Stop buttons inside the circle */
-.start-stop button {
-  padding: 8px 16px;
+/* General button styling */
+.start-stop button,
+.resetBtn,
+.themeToggleBtn {
+  padding: 10px 20px;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 14px;
-  color: white;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Reset button styling */
 .resetBtn {
-  background-color: #4caf50;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  color: white;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
 }
-
-/* Hover effect for Reset button */
 .resetBtn:hover {
-  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(56, 249, 215, 0.6);
 }
 
-/* Start button color */
+/* Start button styling */
 .startBtn {
-  background-color: #2196f3;
+  background: linear-gradient(135deg, #2196f3, #00c6ff);
+}
+.startBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.6);
 }
 
-/* Stop button color */
+/* Stop button styling */
 .stopBtn {
-  background-color: #f44336;
+  background: linear-gradient(135deg, #f44336, #ff6b6b);
+}
+.stopBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
 
-/* Hover effect for Start and Stop buttons */
-.start-stop button:hover {
-  opacity: 0.8;
+/* Theme toggle button */
+.themeToggleBtn {
+  background: linear-gradient(135deg, #ff9800, #ffb74d);
+  font-size: 16px;
+}
+.themeToggleBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 183, 77, 0.6);
 }
 
-/* Toggling Styles States */
 /* Light theme */
 body.light-theme {
-  background-color: #f0f0f0;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
   color: #000;
 }
-
-.start-stop.light-theme {
-  background-color: #d2ec8a;
+body.light-theme p {
+  color: #333;
+  text-shadow: 0 0 5px #aaa;
+}
+body.light-theme .start-stop {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.resetBtn.light-theme {
-  background-color: #4caf50;
-  color: white;
-}
-
-.startBtn.light-theme {
-  background-color: #2196f3;
-}
-
-.stopBtn.light-theme {
-  background-color: #f44336;
-}
-
-/* Theme toggle button styling */
-.themeToggleBtn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #ff9800; /* Orange color */
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.themeToggleBtn:hover {
-  background-color: #e68a00; /* Slightly darker on hover */
-}
-
+/* Responsive adjustments */
 @media (max-width: 600px) {
   p {
     font-size: 60px;
+  }
+  .start-stop {
+    width: 200px;
+    height: 200px;
+    gap: 15px;
   }
 }
